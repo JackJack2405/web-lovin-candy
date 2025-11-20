@@ -1,0 +1,125 @@
+/* ========== COLOR TOKENS ========== */
+:root {
+    --candy-pink: #FF74B1;
+    --soft-pink: #FFB4D5;
+    --soft-yellow: #FFEB76;
+    --baby-blue: #A6EAFF;
+    --aqua-blue: #65DBFF;
+
+    --text-black: #000000;
+    --text-light: rgba(0,0,0,0.6);
+
+    --bg-light: #FFF7FB;
+}
+
+/* ========== NAVBAR ========== */
+
+.site-header {
+    background: var(--baby-blue);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: var(--text-black);
+}
+.logo-img {
+    width: 50px;
+    height: 36px;
+    object-fit: cover;
+    border-radius: 50%;
+    background: white;
+    padding: 4px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    
+}
+
+
+.logo-badge {
+    width: 32px;
+    height: 32px;
+    border-radius: 999px;
+    background: var(--soft-yellow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.logo-text {
+    font-weight: 700;
+    text-transform: lowercase;
+    letter-spacing: 0.08em;
+}
+
+
+/* nav */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-black);
+    font-size: 14px;
+    font-weight: 500;
+    padding: 6px 8px;
+    border-radius: 999px;
+    transition: background 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+
+.nav-links a:not(.nav-btn):hover {
+    background: rgba(255, 255, 255, 0.6);
+    transform: translateY(-1px);
+}
+
+/*Register */
+.nav-btn {
+    background: var(--candy-pink);
+    padding: 6px 14px;
+    box-shadow: 0 3px 0 rgba(0,0,0,0.1);
+}
+
+.nav-btn:hover {
+    background: var(--soft-pink);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+}
+body {
+    margin: 0;
+    background: var(--bg-light);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+
+
+
+/* ========== MOBILE ========== */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        row-gap: 8px;
+    }
+}
