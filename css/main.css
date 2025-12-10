@@ -1,4 +1,6 @@
-/* ========== COLOR TOKENS ========== */
+/* =========================================================
+   GLOBAL COLOR TOKENS (LovinCandy)
+   ========================================================= */
 :root {
     --candy-pink: #FF74B1;
     --soft-pink: #FFB4D5;
@@ -6,14 +8,28 @@
     --baby-blue: #A6EAFF;
     --aqua-blue: #65DBFF;
 
-    --text-black: #000000;
+    --text-black: #000;
     --text-light: rgba(0,0,0,0.6);
 
     --bg-light: #FFF7FB;
 }
 
-/* ========== NAVBAR ========== */
+/* =========================================================
+   GLOBAL BASE
+   ========================================================= */
+body {
+    margin: 0;
+    background: var(--bg-light);
+    font-family: "Patrick Hand", system-ui;
+}
 
+h1, h2, h3 {
+    font-family: "Jua", sans-serif;
+}
+
+/* =========================================================
+   NAVBAR (เดิม)
+   ========================================================= */
 .site-header {
     background: var(--baby-blue);
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
@@ -28,7 +44,6 @@
     justify-content: space-between;
 }
 
-/* logo */
 .logo {
     display: flex;
     align-items: center;
@@ -36,6 +51,7 @@
     text-decoration: none;
     color: var(--text-black);
 }
+
 .logo-img {
     width: 50px;
     height: 36px;
@@ -44,19 +60,6 @@
     background: white;
     padding: 4px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-    
-}
-
-
-.logo-badge {
-    width: 32px;
-    height: 32px;
-    border-radius: 999px;
-    background: var(--soft-yellow);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
 }
 
 .logo-text {
@@ -65,8 +68,6 @@
     letter-spacing: 0.08em;
 }
 
-
-/* nav */
 .nav-links {
     list-style: none;
     display: flex;
@@ -77,44 +78,154 @@
 .nav-links a {
     text-decoration: none;
     color: var(--text-black);
-    font-size: 14px;
+    font-size: 1rem;
     font-weight: 500;
     padding: 6px 8px;
     border-radius: 999px;
-    transition: background 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+    transition: background 0.2s ease, transform 0.1s ease;
 }
-
 
 .nav-links a:not(.nav-btn):hover {
-    background: rgba(255, 255, 255, 0.6);
-    transform: translateY(-1px);
+    background: rgba(255,255,255,0.6);
+    transform: translateY(-2px);
 }
 
-/*Register */
+/* Register Button */
 .nav-btn {
     background: var(--candy-pink);
     padding: 6px 14px;
-    box-shadow: 0 3px 0 rgba(0,0,0,0.1);
+    box-shadow: 0 3px 0 rgba(0,0,0,0.15);
+    color: white !important;
 }
 
 .nav-btn:hover {
     background: var(--soft-pink);
-    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
-}
-body {
-    margin: 0;
-    background: var(--bg-light);
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 0 rgba(0,0,0,0.15);
 }
 
+/* =========================================================
+   HERO A1-3 (Style: Bright, rounded, candy-shop)
+   ========================================================= */
+.hero {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 40px 24px;
+    background: var(--soft-yellow);
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 6px 10px rgba(0,0,0,0.08);
+}
 
+.hero h1 {
+    font-size: 48px;
+    color: var(--text-black);
+}
 
+.hero p {
+    font-size: 20px;
+    margin-top: 10px;
+    color: var(--text-light);
+}
 
-/* ========== MOBILE ========== */
+/* =========================================================
+   RUSH PAGE HERO
+   ========================================================= */
+.rush-hero {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 40px 24px;
+    background: var(--aqua-blue);
+    border-radius: 25px;
+    text-align: center;
+    color: var(--text-black);
+    box-shadow: 0 6px 10px rgba(0,0,0,0.08);
+}
+
+* img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;   /* ยืดให้ครอบทั้งกรอบ */
+}
+
+.rush-hero h1 {
+    font-size: 40px;
+}
+
+.rush-hero p {
+    margin-top: 5px;
+    font-size: 18px;
+}
+
+/* =========================================================
+   PRODUCT GRID (A → responsive)
+   4 columns desktop, 2 columns mobile
+   ========================================================= */
+.product-section {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 24px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 26px;
+}
+
+/* Responsive - tablet */
+@media (max-width: 900px) {
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Responsive - mobile */
+@media (max-width: 600px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* =========================================================
+   PRODUCT CARD
+   ========================================================= */
+.product-card {
+    background: white;
+    border-radius: 20px;
+    padding: 18px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform .25s ease, box-shadow .25s ease;
+    cursor: pointer;
+}
+
+.product-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+    border-radius: 16px;
+}
+
+.product-card h3 {
+    margin-top: 12px;
+    font-size: 18px;
+    color: var(--text-black);
+}
+
+/* Hover effect แบบ Poppin Candy */
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+
+/* =========================================================
+   MOBILE NAVBAR
+   ========================================================= */
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
-        gap: 10px;
+        gap: 14px;
         align-items: flex-start;
     }
 
